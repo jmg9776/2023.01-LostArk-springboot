@@ -19,10 +19,19 @@ public class PublicTestApi {
 
     private final GuardianRaidCalculateService guardianRaidCalculateService;
 
-    @GetMapping("/test2")
-    public Object test2() {
+    @GetMapping("/updateTest")
+    public void updateTest() {
         updateFixedData.updateAll();
         expeditionUpdate.update(2L);
+    }
+
+    @GetMapping("/guardianRaidCalTest")
+    public Object guardianRaidCalTest() {
         return guardianRaidCalculateService.getData(1600L);
+    }
+
+    @GetMapping("/chaosDungeonCalTest")
+    public Object chaosDungeonCalTest() {
+        return chaosDungeonCalculateService.getData(1600L);
     }
 }
