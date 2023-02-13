@@ -22,7 +22,7 @@ public class PublicTestApi {
     @GetMapping("/updateTest")
     public void updateTest() {
         updateFixedData.updateAll();
-        expeditionUpdate.update(2L);
+        expeditionUpdate.update(1L);
     }
 
     @GetMapping("/guardianRaidCalTest")

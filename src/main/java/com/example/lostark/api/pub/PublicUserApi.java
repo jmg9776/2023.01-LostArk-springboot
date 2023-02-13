@@ -12,18 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/public-api/v1")
 public class PublicUserApi {
     private final MemberFrontService memberFrontService;
-
     @PostMapping("/sign")
     public RestResult sign(@RequestBody MemberParam memberParam) {
         return memberFrontService.sign(memberParam);
     }
-
-    @PostMapping("/refresh")
-    public void refresh(@RequestBody RefreshExpeditionParam param) {}
-
-    @GetMapping("/updateMarket")
-    public void updateMarket() {}
-
-    @GetMapping("/updateGem")
-    public void updateJam() {}
 }
