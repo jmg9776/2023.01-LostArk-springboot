@@ -33,6 +33,5 @@ public class ExpeditionService<E extends Expedition> extends DataAccessAbstract<
         return (List<E>) repository.findAll();
     }
 
-    //Todo : Query tuning
     public List<E> findAllByUid(Long uid) { return (List<E>) repository.findAllByMember_Uid(uid);}
 }
