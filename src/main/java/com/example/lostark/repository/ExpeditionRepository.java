@@ -8,6 +8,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ExpeditionRepository extends BaseRepository<Expedition, Long> {
-    @Query("select t from Expedition t join fetch t.characterInfo")
+    @Query("select t from Expedition t join fetch t.characterInfo join fetch t.member")
     ArrayList<Expedition> findAllByMember_Uid(Long uid);
 }
