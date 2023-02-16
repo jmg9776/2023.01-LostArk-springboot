@@ -22,6 +22,6 @@ public class PublicUserApi {
 
     @PostMapping("/getExpedition")
     public RestResult getExpedition(@RequestBody MemberParam memberParam) {
-        return expeditionFrontService.getExpedition(memberParam.getUid());
+        return expeditionFrontService.getExpedition(memberParam);
     }
 }

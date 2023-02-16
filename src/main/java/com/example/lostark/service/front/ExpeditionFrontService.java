@@ -2,6 +2,7 @@ package com.example.lostark.service.front;
 
 import com.example.lostark.model.entity.Expedition;
 import com.example.lostark.model.entity.Member;
+import com.example.lostark.model.param.MemberParam;
 import com.example.lostark.model.result.RestResult;
 import com.example.lostark.model.result.RestResultBuilder;
 import com.example.lostark.service.persist.ExpeditionService;
@@ -18,7 +19,10 @@ public class ExpeditionFrontService {
     private final ExpeditionService expeditionService;
     private final RestResultBuilder<Class> resultBuilder = new RestResultBuilder<>(Expedition.class,"member");
 
-    public RestResult getExpedition(long uid) {
+    public RestResult getExpedition(MemberParam memberParam) {
+        long uid=0l;
+        if (memberParam.getUid() != null) uid = memberParam.getUid();
+        else return null;
         List<Expedition> expeditionList = expeditionService.findAllByUid(uid);
         return new RestResult(resultBuilder.listResultBuilder(Collections.singletonList(expeditionList)));
     }
