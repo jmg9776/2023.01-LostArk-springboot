@@ -13,10 +13,9 @@ import java.util.Collections;
 
 @Service
 @RequiredArgsConstructor
-public class CalculateFrontService {
+public class CalculateFrontService extends FrontService{
     private final ChaosDungeonCalculateService chaosDungeonCalculateService;
     private final GuardianRaidCalculateService guardianRaidCalculateService;
-    private final RestResultBuilder resultBuilder;
 
     public RestResult getAllCalChaosDungeon() {
         return resultBuilder.resultBuilder("calculates", chaosDungeonCalculateService.findAll());

@@ -11,9 +11,8 @@ import org.springframework.stereotype.Service;
 // fixme 전체적으로 로그를 적절하게 찍어야할 것 같습니다. ^^
 @AllArgsConstructor
 @Service
-public class MemberFrontService {
+public class MemberFrontService extends FrontService{
     private final MemberService memberService;
-    private final RestResultBuilder resultBuilder;
 
     public RestResult sign(MemberParam memberParam) {
         Member account = memberService.save(memberParam.toEntity());

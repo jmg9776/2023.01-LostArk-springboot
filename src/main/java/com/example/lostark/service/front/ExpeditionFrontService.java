@@ -15,9 +15,8 @@ import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
-public class ExpeditionFrontService {
+public class ExpeditionFrontService extends FrontService{
     private final ExpeditionService expeditionService;
-    private final RestResultBuilder resultBuilder;
 
     public RestResult getExpedition(MemberParam memberParam) {
         long uid=0l;
