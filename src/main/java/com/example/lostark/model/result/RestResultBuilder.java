@@ -12,7 +12,6 @@ import java.util.Map;
 
 @Slf4j
 @AllArgsConstructor
-@Service
 public class RestResultBuilder {
     public RestResult resultBuilder(String name, Object data) {
         Map<String, Object> result = new LinkedHashMap<>();
