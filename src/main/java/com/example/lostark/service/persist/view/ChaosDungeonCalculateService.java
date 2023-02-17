@@ -5,6 +5,8 @@ import com.example.lostark.repository.view.ChaosDungeonCalculateRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ChaosDungeonCalculateService {
@@ -13,5 +15,9 @@ public class ChaosDungeonCalculateService {
 
     public ChaosDungeonCalculate getData(Long target) {
         return chaosDungeonCalculateRepository.findTopByLevelLessThanEqualOrderByLevelDesc(target);
+    }
+
+    public List<ChaosDungeonCalculate> findAll() {
+        return chaosDungeonCalculateRepository.findAll();
     }
 }

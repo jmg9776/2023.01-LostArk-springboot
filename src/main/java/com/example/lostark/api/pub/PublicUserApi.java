@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/public-api/v1")
+@RequestMapping("/public-api/v1/user")
 public class PublicUserApi {
     private final MemberFrontService memberFrontService;
     private final ExpeditionFrontService expeditionFrontService;
