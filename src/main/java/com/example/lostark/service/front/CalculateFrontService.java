@@ -16,7 +16,7 @@ import java.util.Collections;
 public class CalculateFrontService {
     private final ChaosDungeonCalculateService chaosDungeonCalculateService;
     private final GuardianRaidCalculateService guardianRaidCalculateService;
-    private final RestResultBuilder resultBuilder = new RestResultBuilder();
+    private final RestResultBuilder resultBuilder;
 
     public RestResult getAllCalChaosDungeon() {
         return resultBuilder.resultBuilder("calculates", chaosDungeonCalculateService.findAll());

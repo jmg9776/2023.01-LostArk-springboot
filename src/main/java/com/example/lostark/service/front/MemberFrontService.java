@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MemberFrontService {
     private final MemberService memberService;
-    private final RestResultBuilder resultBuilder = new RestResultBuilder();
+    private final RestResultBuilder resultBuilder;
 
     public RestResult sign(MemberParam memberParam) {
         Member account = memberService.save(memberParam.toEntity());
