@@ -11,30 +11,10 @@ import java.util.Map;
 
 @Slf4j
 @AllArgsConstructor
-public class RestResultBuilder<T extends Class> {
-
-    private final T target;
-    private final String name;
-    private final ModelMapper modelMapper = new ModelMapper();
-
-    public Map<String, Object> resultBuilder(Object data) {
-        final Object mapper = modelMapper.map(data, target);
+public class RestResultBuilder {
+    public RestResult resultBuilder(String name, Object data) {
         Map<String, Object> result = new LinkedHashMap<>();
-        result.put(name, mapper);
-        return result;
-    }
-
-    public Map<String, Object> listResultBuilder(List<Object> dataList) {
-        Object temp;
-        Map<String, Object> result = new LinkedHashMap<>();
-        List<Object> arrayList = new ArrayList<>();
-        dataList = (List<Object>) dataList.get(0);
-
-        for (int i=0;i<dataList.size();i++) {
-            temp = modelMapper.map(dataList.get(i), target);
-            arrayList.add(temp);
-        }
-        result.put(name, arrayList);
-        return result;
+        result.put(name, data);
+        return new RestResult(result);
     }
 }

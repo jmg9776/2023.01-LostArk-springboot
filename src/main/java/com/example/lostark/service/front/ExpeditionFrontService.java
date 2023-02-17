@@ -17,13 +17,13 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class ExpeditionFrontService {
     private final ExpeditionService expeditionService;
-    private final RestResultBuilder<Class> resultBuilder = new RestResultBuilder<>(Expedition.class,"member");
+    private final RestResultBuilder resultBuilder = new RestResultBuilder();
 
     public RestResult getExpedition(MemberParam memberParam) {
         long uid=0l;
         if (memberParam.getUid() != null) uid = memberParam.getUid();
         else return null;
         List<Expedition> expeditionList = expeditionService.findAllByUid(uid);
-        return new RestResult(resultBuilder.listResultBuilder(Collections.singletonList(expeditionList)));
+        return resultBuilder.resultBuilder("expeditionList",expeditionList);
     }
 }
