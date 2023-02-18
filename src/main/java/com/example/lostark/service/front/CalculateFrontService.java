@@ -20,4 +20,8 @@ public class CalculateFrontService extends FrontService{
     public RestResult getAllCalChaosDungeon() {
         return resultBuilder.resultBuilder("calculates", chaosDungeonCalculateService.findAll());
     }
+
+    public RestResult getAllCalGuardianRaid() {
+        return resultBuilder.resultBuilder("calculates", guardianRaidCalculateService.findAll());
+    }
 }

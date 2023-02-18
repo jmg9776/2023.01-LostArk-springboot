@@ -12,8 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/public-api/v1/cal")
 public class PublicCalculate {
     private final CalculateFrontService calculateFrontService;
+
     @GetMapping("/getAllChaosDungeon")
     public RestResult getAllChaosDungeon() {
         return calculateFrontService.getAllCalChaosDungeon();
+    }
+
+    @GetMapping("/getAllGuardianRaid")
+    public RestResult getAllGuardianRaid() {
+        return calculateFrontService.getAllCalGuardianRaid();
     }
 }
