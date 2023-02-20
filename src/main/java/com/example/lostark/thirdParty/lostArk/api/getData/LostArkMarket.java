@@ -25,6 +25,7 @@ public class LostArkMarket<E extends Market> implements LostArkApiInterface<E, L
         market.setId(id);
         return market;
     }
+
     @Override
     public ArrayList<E> getData(List<E> market) {
         LinkedHashMap temp;
