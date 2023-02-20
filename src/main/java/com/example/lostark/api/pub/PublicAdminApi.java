@@ -6,12 +6,14 @@ import com.example.lostark.service.aggregator.lostArk.expedition.UpdateExpeditio
 import com.example.lostark.service.persist.view.ChaosDungeonCalculateService;
 import com.example.lostark.service.persist.view.GuardianRaidCalculateService;
 import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/public-api/v1")
+@Profile("Admin")
 public class PublicAdminApi {
 
     private final UpdateExpedition expeditionUpdate;
