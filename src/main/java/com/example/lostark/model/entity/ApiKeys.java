@@ -1,9 +1,6 @@
 package com.example.lostark.model.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,6 +11,10 @@ import lombok.Data;
 @AllArgsConstructor
 public class ApiKeys {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
+
+    @Column(name = "apiKey")
     String apiKey;
     @ManyToOne
     Member member;
