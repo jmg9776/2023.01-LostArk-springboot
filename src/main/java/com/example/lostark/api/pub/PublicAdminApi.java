@@ -30,12 +30,6 @@ public class PublicAdminApi {
         expeditionUpdate.update(1L);
     }
 
-    @Async
-    @Scheduled(fixedRate = 3600000)
-    public void update() {
-        updateFixedData.updateAll();
-    }
-
     @GetMapping("/guardianRaidCalTest")
     public Object guardianRaidCalTest() {
         return guardianRaidCalculateService.getData(1600L);
