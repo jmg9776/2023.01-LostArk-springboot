@@ -24,6 +24,12 @@ public class PublicAdminApi {
 
     private final GuardianRaidCalculateService guardianRaidCalculateService;
 
+    @Async
+    @Scheduled(fixedRate = 3600000)
+    public void update() {
+        updateFixedData.updateAll();
+    }
+
     @GetMapping("/updateTest")
     public void updateTest() {
         updateFixedData.updateAll();
