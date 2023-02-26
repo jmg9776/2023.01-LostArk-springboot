@@ -5,12 +5,14 @@ import com.example.lostark.repository.ApiKeysRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ApiKeysService {
     private final ApiKeysRepository apiKeysRepository;
 
-    public ApiKeys findApiKeyByUid(Long uid) {
+    public List<String> findApiKeyByUid(Long uid) {
         return apiKeysRepository.findApiKeysByUid(uid);
     }
 }

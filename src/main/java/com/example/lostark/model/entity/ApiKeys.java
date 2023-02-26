@@ -14,7 +14,8 @@ public class ApiKeys {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Column(name = "apiKey")
+    @Lob
+    @Column(name = "apiKey", length = 512)
     String apiKey;
     @ManyToOne
     Member member;
