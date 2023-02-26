@@ -16,10 +16,10 @@ public class ChaosDungeon {
     private Long cid;
     private Long level;
     private Long grade;
-    private Long destruction;
-    private Long guardian;
-    private Long gem;
-
+    private double destruction;
+    private double guardian;
+    private double gem;
+    private double bonus;
     public ChaosDungeon() {
 
     }

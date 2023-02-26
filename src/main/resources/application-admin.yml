@@ -2,7 +2,7 @@
 # Database
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3305/lostArk?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=yes&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=Asia/Seoul
+    url: jdbc:mysql://localhost:3306/lostArk?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=yes&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=Asia/Seoul
     username: root
     password: '1234'
     driver-class-name: com.mysql.cj.jdbc.Driver
