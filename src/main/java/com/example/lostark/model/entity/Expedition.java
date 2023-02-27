@@ -1,5 +1,6 @@
 package com.example.lostark.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -16,6 +17,8 @@ public class Expedition {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long eid;
+
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "member_uid")
     Member member;
