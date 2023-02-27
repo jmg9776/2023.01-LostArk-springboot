@@ -8,6 +8,7 @@ import com.example.lostark.service.persist.ExpeditionService;
 import com.example.lostark.service.persist.MemberService;
 import com.example.lostark.thirdParty.lostArk.api.getData.LostArkExpedition;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class UpdateExpedition {
     private final ExpeditionService expeditionService;
     private final LostArkExpedition lostArkExpedition;
 
+    @Cacheable(value = "expeditionUpdate", key = "#uid")
     public void update(Long uid) {
         List<CharacterInfo> data;
 
