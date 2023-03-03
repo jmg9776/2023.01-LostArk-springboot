@@ -21,6 +21,7 @@ public class PublicMemberApi {
         return memberFrontService.sign(memberParam);
     }
 
+
     @PostMapping("/getExpedition")
     public RestResult getExpedition(@RequestBody MemberParam memberParam) {
         return expeditionFrontService.getExpedition(memberParam);
